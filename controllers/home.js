@@ -36,7 +36,7 @@ router.get('/', async (req, res) => {
           },
         ],
       });
-
+ if(postseeds){
       const post = postseeds.get({ plain: true });
       
       console.log(post);
