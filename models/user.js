@@ -1,7 +1,7 @@
 
 const {Model,DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
-const sequelize = require('../config/connection.js');
+const sequelize = require('../config/config');
 
 
 class User extends Model{
@@ -31,19 +31,21 @@ User.init(
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          len: [4]
+          len: [6]
         }
       }
     },
     {
       hooks: {
-        // set up beforeCreate lifecycle "hook" functionality
-        async beforeCreate(newUserData) {
+       
+        beforeCreate(newUserData) {
           newUserData.password = await bcrypt.hash(newUserData.password, 10);
           return newUserData;
         },
   
-        async beforeUpdate(updatedUserData) {
+
+
+        beforeUpdate(updatedUserData) {
           updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
           return updatedUserData;
         }
