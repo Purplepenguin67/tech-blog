@@ -75,13 +75,11 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 
 
 ## Application links
-Github: https://github.com/Purplepenguin67/tech-blog
+Github Link: https://github.com/Purplepenguin67/tech-blog
 
-Heroku: https://tech-blog87.herokuapp.com/
+Heroku Deployment: https://tech-blog87.herokuapp.com/
 
 
-
-## Main page view
 
 
 
